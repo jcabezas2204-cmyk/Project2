@@ -15,6 +15,19 @@ Ejemplo: { “isbn”: “978-1”, “titulo”: “Cien años de soledad”,
  “autor”: “García Márquez”, “genero”: “Novela”,
  “ejemplares_totales”: 2, “ejemplares_disponibles”: 2 }
  """
+def agregar_libro(catalogo, isbn, titulo, autor, genero, 
+ejemplares):
+    if isbn in Catalogo:
+        print("El isbn ya existe")
+    Catalogo = {
+        "isbn" : none,
+        "titulo" : none,
+        "autor" : none,
+        "genero" : none,
+        "ejemplares_totales" : none,
+        "ejemplares_disponibles" : none
+        }
+
 """
 #Usuario:
 
