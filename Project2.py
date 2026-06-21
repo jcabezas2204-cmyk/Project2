@@ -15,19 +15,32 @@ Ejemplo: { “isbn”: “978-1”, “titulo”: “Cien años de soledad”,
  “autor”: “García Márquez”, “genero”: “Novela”,
  “ejemplares_totales”: 2, “ejemplares_disponibles”: 2 }
  """
-def agregar_libro(catalogo, isbn, titulo, autor, genero, 
-ejemplares):
-    if isbn in Catalogo:
-        print("El isbn ya existe")
-    Catalogo = {
-        "isbn" : none,
-        "titulo" : none,
-        "autor" : none,
-        "genero" : none,
-        "ejemplares_totales" : none,
-        "ejemplares_disponibles" : none
-        }
+catalogo = {}
+def agregar_libro():
+    isbn = input("isbn: ")
+    if isbn in catalogo:
+        print(f"El isnb", (isbn),"ya existe")
+        return
 
+    libro = {
+        "isbn": isbn,
+        "titulo": input("Título: "),
+        "autor": input("Autor: "),
+        "genero": input("Género: "),
+        "ejemplares_totales": int(input("Ejemplares totales: ")),
+        "ejemplares_disponibles": int(input("Ejemplares disponibles: "))
+    }
+
+    catalogo[isbn] = libro
+    print("Libro agregado")
+    return catalogo
+
+cantidad_libros=int(input("cuantos libros tendra el catalogo: "))
+i=0
+while i<cantidad_libros:
+    agregar_libro()
+    i+=1
+print(catalogo)
 """
 #Usuario:
 
@@ -43,6 +56,9 @@ usuario.
 Ejemplo: { “numero_socio”: 1, “nombre”: “Ana García”,
  “prestamos_activos”: [“978-1”] }
 """
+def Usuario():
+    diccUsuario={"libro":""}
+    
 """
 #Préstamo:
 
