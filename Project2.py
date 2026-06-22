@@ -1,22 +1,10 @@
 #Trabajo en equipo 
-"""
+catalogo={}
+prestamos=[]
+usuarios={}
 #Libro:
-
-Cada libro se representa como un diccionario con las siguientes claves:
-• isbn: string único que identifica al libro.
-• titulo: string con el título del libro.
-• autor: string con el autor del libro.
-• genero: string con el género del libro.
-• ejemplares_totales: entero que indica la cantidad total de ejemplares
-• ejemplares_disponibles: enteros que indican la cantidad de ejemplares
-disponibles para préstamo.
-
-Ejemplo: { “isbn”: “978-1”, “titulo”: “Cien años de soledad”,
- “autor”: “García Márquez”, “genero”: “Novela”,
- “ejemplares_totales”: 2, “ejemplares_disponibles”: 2 }
- """
-catalogo = {}
-def agregar_libro():
+#agregar libro
+def agregar_libro(catalogo, isbn, titulo, autor, genero, ejemplares):
     isbn = input("isbn: ")
     if isbn in catalogo:
         print(f"El isnb", (isbn),"ya existe")
@@ -35,30 +23,32 @@ def agregar_libro():
     print("Libro agregado")
     return catalogo
 
-cantidad_libros=int(input("cuantos libros tendra el catalogo: "))
-i=0
-while i<cantidad_libros:
-    agregar_libro()
-    i+=1
-print(catalogo)
-"""
+#eliminar_libro
+def eliminar_libro(catalogo, prestamos, isbn):
+    pass
+
+#buscar_libro
+def buscar_libro(catalogo, termino):
+    pass
+
 #Usuario:
+#registrar_usuario
+def registrar_usuario(usuarios, numero_socio, nombre):
+    diccUsuario={
+    "numero_socio": input("numero de socio: "),
+    "nombre": input("nombre: "),
+    "prestamos_activos": []
+    }
+    pass
 
-Cada usuario se representa como un diccionario con las siguientes claves:
-{ “isbn”: “978-1”, “titulo”: “Cien años de soledad”,
- “autor”: “García Márquez”, “genero”: “Novela”,
- “ejemplares_totales”: 2, “ejemplares_disponibles”: 2 }
-• numero_socio: entero que identifica al usuario.
-• nombre: string con el nombre completo.
-• prestamos_activos: lista de ISBNs de libros prestados actualmente al
-usuario.
+#dar_baja_usuario
+def dar_baja_usuario(usuarios, prestamos, 
+numero_socio):
+    pass
 
-Ejemplo: { “numero_socio”: 1, “nombre”: “Ana García”,
- “prestamos_activos”: [“978-1”] }
-"""
-def Usuario():
-    diccUsuario={"libro":""}
-    
+#historial_usuario
+def historial_usuario(prestamos, numero_socio):
+    pass
 """
 #Préstamo:
 
@@ -74,6 +64,20 @@ Ejemplo: { “numero_socio”: 1, “isbn”: “978-1”,
  “fecha_prestamo”: ”02/06/2026”,
  “fecha_limite”: “09/06/2026”, “devuelto”: False }
  """
+#registrar_prestamo
+def registrar_prestamo(catalogo, usuarios, prestamos, 
+numero_socio, isbn, fecha_prestamo):
+    pass
+    
+#registrar_devolucion
+def registrar_devolucion(catalogo, prestamos, 
+numero_socio, isbn):
+    pass
+    
+#listar_vencidos
+def listar_vencidos(prestamos, fecha_actual):
+    pass
+
 """
 #Estructuras globales:
 
@@ -85,9 +89,6 @@ libro.
 diccionario del usuario.
 • prestamos: lista de diccionarios, donde cada uno corresponde a un préstamo
 registrado
-
-Observación: toda operación que modifique el estado del sistema debe quedar
-persistida en el archivo correspondiente.
 """
 """
 #Bonus (opcional):
@@ -100,3 +101,14 @@ La función debe llamarse recomendar_libros(catalogo, prestamos,
 numero_socio, n) y retornar una lista con hasta n libros recomendados, ordenados
 por ejemplares disponibles de mayor a menor.
 """
+#guardar_datos
+def guardar_datos(catalogo, usuarios, prestamos, ruta):
+    pass
+    
+#cargar_datos(ruta)
+def cargar_datos(ruta):
+    pass
+    
+#normalizar(texto)
+def normalizar(texto):
+    pass
