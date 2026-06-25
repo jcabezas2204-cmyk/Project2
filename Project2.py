@@ -103,11 +103,13 @@ def agregar_libro():
         "ejemplares_totales": int(input("Ejemplares totales: ")),
         "ejemplares_disponibles": int(input("Ejemplares disponibles: "))
     }
-
-    catalogo[isbn] = libro
-    guardar_datos(catalogo, usuarios, prestamos, ruta)
-    print("Libro agregado")
-    return catalogo
+    if libro["ejemplares_disponibles"] <= libro["ejemplares_totales"]:
+        catalogo[isbn] = libro
+        guardar_datos(catalogo, usuarios, prestamos, ruta)
+        print("Libro agregado")
+        return catalogo
+    else:
+        print(f"Error: el valor de ejemplares disponibles es mayor a los totales")
 
 #eliminar_libro
 def eliminar_libro():
